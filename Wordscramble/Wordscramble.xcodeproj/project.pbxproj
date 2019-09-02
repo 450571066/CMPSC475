@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		133AEAC2231CAD20000A0FB6 /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133AEABE231CAD20000A0FB6 /* WordModel.swift */; };
+		133AEAC3231CAD20000A0FB6 /* Words4 in Resources */ = {isa = PBXBuildFile; fileRef = 133AEABF231CAD20000A0FB6 /* Words4 */; };
+		133AEAC4231CAD20000A0FB6 /* Words6 in Resources */ = {isa = PBXBuildFile; fileRef = 133AEAC0231CAD20000A0FB6 /* Words6 */; };
+		133AEAC5231CAD20000A0FB6 /* Words5 in Resources */ = {isa = PBXBuildFile; fileRef = 133AEAC1231CAD20000A0FB6 /* Words5 */; };
 		135A901C231C71D100B0DE27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A901B231C71D100B0DE27 /* AppDelegate.swift */; };
 		135A901E231C71D100B0DE27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A901D231C71D100B0DE27 /* ViewController.swift */; };
 		135A9021231C71D100B0DE27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 135A901F231C71D100B0DE27 /* Main.storyboard */; };
@@ -26,6 +30,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		133AEABD231C9B9E000A0FB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		133AEABE231CAD20000A0FB6 /* WordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
+		133AEABF231CAD20000A0FB6 /* Words4 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Words4; sourceTree = "<group>"; };
+		133AEAC0231CAD20000A0FB6 /* Words6 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Words6; sourceTree = "<group>"; };
+		133AEAC1231CAD20000A0FB6 /* Words5 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Words5; sourceTree = "<group>"; };
 		135A9018231C71D100B0DE27 /* Wordscramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordscramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		135A901B231C71D100B0DE27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		135A901D231C71D100B0DE27 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +86,10 @@
 		135A901A231C71D100B0DE27 /* Wordscramble */ = {
 			isa = PBXGroup;
 			children = (
+				133AEABE231CAD20000A0FB6 /* WordModel.swift */,
+				133AEABF231CAD20000A0FB6 /* Words4 */,
+				133AEAC1231CAD20000A0FB6 /* Words5 */,
+				133AEAC0231CAD20000A0FB6 /* Words6 */,
 				135A901B231C71D100B0DE27 /* AppDelegate.swift */,
 				135A901D231C71D100B0DE27 /* ViewController.swift */,
 				135A901F231C71D100B0DE27 /* Main.storyboard */,
@@ -177,8 +190,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				133AEAC4231CAD20000A0FB6 /* Words6 in Resources */,
 				135A9026231C71D300B0DE27 /* LaunchScreen.storyboard in Resources */,
+				133AEAC3231CAD20000A0FB6 /* Words4 in Resources */,
 				135A9023231C71D300B0DE27 /* Assets.xcassets in Resources */,
+				133AEAC5231CAD20000A0FB6 /* Words5 in Resources */,
 				135A9021231C71D100B0DE27 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				135A901E231C71D100B0DE27 /* ViewController.swift in Sources */,
+				133AEAC2231CAD20000A0FB6 /* WordModel.swift in Sources */,
 				135A901C231C71D100B0DE27 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +242,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				135A9020231C71D100B0DE27 /* Base */,
+				133AEABD231C9B9E000A0FB6 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
