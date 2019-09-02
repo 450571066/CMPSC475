@@ -31,7 +31,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var newWordButton: UIButton!
     @IBOutlet weak var checkButton: UIButton!
-
     @IBOutlet weak var undoButton: UIButton!
     @IBOutlet weak var word: UILabel!
     @IBOutlet weak var letters: UISegmentedControl!
