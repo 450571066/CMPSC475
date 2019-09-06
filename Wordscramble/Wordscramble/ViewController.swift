@@ -27,7 +27,9 @@ class ViewController: UIViewController {
     var newWords: [String] = []
     var currentWord: String = ""
     var letterIndex: [Int] = []
-    
+    var currentCorrection: String = ""
+    var numberOfQuestion: Int = 0
+    var numberOfCorrect: Int = 0
 
     @IBOutlet weak var newWordButton: UIButton!
     @IBOutlet weak var checkButton: UIButton!
@@ -36,6 +38,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var letters: UISegmentedControl!
     @IBOutlet weak var length: UISegmentedControl!
     @IBOutlet weak var response: UILabel!
+    @IBOutlet weak var Correction: UILabel!
     
     
     @IBAction func onClickNewWord(_ sender: UIButton) {
@@ -61,17 +64,22 @@ class ViewController: UIViewController {
     @IBAction func onClickCheck(_ sender: UIButton) {
         currentStage = stage.Ready
         checkStage(stage: currentStage.rawValue)
+        numberOfQuestion = numberOfQuestion + 1
         var newString: String = ""
         for item in newWords{
             newString = newString + item
         }
         if newString == currentWord{
-            response.text = "Correct!"
+//        add new response
+            response.text = wordModel.correctAnswer()
+            numberOfCorrect = numberOfCorrect + 1
         }
         else{
-            response.text = "False!"
+            response.text = wordModel.wrongAnswer()
             word.text = currentWord
         }
+        currentCorrection = String(numberOfCorrect) + " out of " + String(numberOfQuestion) + " Correct."
+        Correction.text = currentCorrection
         length.selectedSegmentIndex = currentLength
     }
     
@@ -125,6 +133,7 @@ class ViewController: UIViewController {
         for index in 1...newSelect{
             letters.insertSegment(withTitle: " ", at: index, animated: true)
         }
+        disableSegment(segment: letters)
         
         
     }

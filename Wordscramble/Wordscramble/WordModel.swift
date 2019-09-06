@@ -47,6 +47,18 @@ class WordModel {
         return result
     }
     
+    func correctAnswer() -> String{
+        let correct = ["You are Correct!","That's Right!","Perfect!"]
+        let index = Int.random(in: 0..<3)
+        return correct[index]
+    }
+    
+    func wrongAnswer() -> String{
+        let wrong = ["Sorry, but its wrong.","Wrong,please try again.","Try it one more time."]
+        let index = Int.random(in: 0..<3)
+        return wrong[index]
+    }
+    
     var randomWord : String {
         get  {
             let theWords = words[currentWordSize]!
