@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina6_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,20 +15,25 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Wordscramble" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiZ-0k-wuW">
-                                <rect key="frame" x="20" y="106" width="374" height="84"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiZ-0k-wuW">
+                                <rect key="frame" x="64" y="46" width="276.33333333333331" height="84"/>
                                 <color key="backgroundColor" red="0.61530375480651855" green="0.92422455549240112" blue="0.98824864625930786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="azC-CX-l6C"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="70"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="azC-CX-l6C"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQR-cQ-RLg">
-                                <rect key="frame" x="227" y="391" width="167" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQR-cQ-RLg">
+                                <rect key="frame" x="636" y="45" width="67" height="121"/>
                                 <color key="backgroundColor" red="0.61530375479999999" green="0.92422455550000004" blue="0.98824864629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <state key="normal" title="Check">
@@ -38,8 +43,8 @@
                                     <action selector="onClickCheck:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vcY-Y7-M1N"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuv-eG-U1w">
-                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuv-eG-U1w">
+                                <rect key="frame" x="64" y="0.0" width="785" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wuv-eG-U1w" secondAttribute="height" multiplier="23:3" id="8v8-xO-Geo"/>
                                 </constraints>
@@ -52,20 +57,14 @@
                                         </attributes>
                                     </fragment>
                                 </attributedString>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="8v8-xO-Geo"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sq-JA-e7x">
-                                <rect key="frame" x="20" y="391" width="167" height="48"/>
-                                <color key="backgroundColor" red="0.61530375480651855" green="0.92422455549240112" blue="0.98824864625930786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
-                                <state key="normal" title="Undo">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="onClickUndo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8LN-Dl-TK3"/>
-                                </connections>
-                            </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cmA-ax-P2S">
-                                <rect key="frame" x="20" y="824" width="374" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cmA-ax-P2S">
+                                <rect key="frame" x="64" y="303" width="550" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cmA-ax-P2S" secondAttribute="height" multiplier="187:14" id="ZHh-4n-q3K"/>
                                 </constraints>
@@ -74,30 +73,47 @@
                                     <segment title="5"/>
                                     <segment title="6"/>
                                 </segments>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="ZHh-4n-q3K"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="onClickLength:" destination="BYZ-38-t0r" eventType="valueChanged" id="siF-XP-i1s"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKf-aa-Hdh">
-                                <rect key="frame" x="20" y="200" width="374" height="69"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKf-aa-Hdh">
+                                <rect key="frame" x="64" y="143" width="147" height="142"/>
+                                <color key="backgroundColor" red="0.16852280410000001" green="1" blue="0.1190611603" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IKf-aa-Hdh" secondAttribute="height" multiplier="374:69" id="z3K-zH-34k"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="z3K-zH-34k"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9u-dd-iKp">
-                                <rect key="frame" x="20" y="329" width="374" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9u-dd-iKp">
+                                <rect key="frame" x="255" y="150" width="169" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.084040851149999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="58U-Ua-ka5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="58U-Ua-ka5"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBm-gR-9dW">
-                                <rect key="frame" x="20" y="766" width="374" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBm-gR-9dW">
+                                <rect key="frame" x="751" y="64" width="115" height="48"/>
                                 <color key="backgroundColor" red="0.61530375479999999" green="0.92422455550000004" blue="0.98824864629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <state key="normal" title="New Word">
@@ -107,8 +123,8 @@
                                     <action selector="onClickNewWord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HkE-6x-w7F"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="qnC-20-1fC">
-                                <rect key="frame" x="20" y="279" width="374" height="41"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="qnC-20-1fC">
+                                <rect key="frame" x="219" y="252" width="516" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="k21-xz-2CC"/>
                                 </constraints>
@@ -118,10 +134,26 @@
                                     <segment title=""/>
                                     <segment title=""/>
                                 </segments>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="k21-xz-2CC"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="onClickLetter:" destination="BYZ-38-t0r" eventType="valueChanged" id="ABv-eF-0Kt"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sq-JA-e7x">
+                                <rect key="frame" x="731" y="146" width="118" height="69"/>
+                                <color key="backgroundColor" red="0.61530375480651855" green="0.92422455549240112" blue="0.98824864625930786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
+                                <state key="normal" title="Undo">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickUndo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8LN-Dl-TK3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.77510243946209145" green="0.90395300601184447" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -155,6 +187,38 @@
                             <constraint firstItem="Y9u-dd-iKp" firstAttribute="top" secondItem="qnC-20-1fC" secondAttribute="bottom" constant="10" id="upc-qU-iel"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="7hd-g6-xic"/>
+                                <exclude reference="9Lj-UU-Efw"/>
+                                <exclude reference="A2G-Q8-a3I"/>
+                                <exclude reference="EOU-8F-q8A"/>
+                                <exclude reference="P7A-SH-3tL"/>
+                                <exclude reference="dMA-yt-dY2"/>
+                                <exclude reference="kyP-Ov-8hi"/>
+                                <exclude reference="rHP-XP-sUl"/>
+                                <exclude reference="5Uo-2x-pth"/>
+                                <exclude reference="AHK-hE-sw4"/>
+                                <exclude reference="Ftf-3L-cgi"/>
+                                <exclude reference="P3u-LT-csr"/>
+                                <exclude reference="ptL-j7-0Gd"/>
+                                <exclude reference="aG3-lo-cr7"/>
+                                <exclude reference="au9-BN-mQ3"/>
+                                <exclude reference="cFw-ev-Bjq"/>
+                                <exclude reference="ea2-IZ-2v4"/>
+                                <exclude reference="pgs-MC-o4a"/>
+                                <exclude reference="upc-qU-iel"/>
+                                <exclude reference="1Er-ZS-brq"/>
+                                <exclude reference="XfF-yf-jLT"/>
+                                <exclude reference="TN7-fr-aPC"/>
+                                <exclude reference="dWW-mB-cBP"/>
+                                <exclude reference="dgz-UT-Nf0"/>
+                                <exclude reference="s5t-hH-ypX"/>
+                                <exclude reference="A3w-pz-GFm"/>
+                                <exclude reference="Q3Q-gD-zf5"/>
+                                <exclude reference="pGU-mN-ahX"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="Correction" destination="IKf-aa-Hdh" id="wsH-GY-Nwi"/>
@@ -169,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
+            <point key="canvasLocation" x="131.25" y="114.49275362318842"/>
         </scene>
     </scenes>
 </document>
