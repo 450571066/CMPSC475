@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina5_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Wordscramble" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuv-eG-U1w">
-                                <rect key="frame" x="0.0" y="20" width="320" height="41.5"/>
+                                <rect key="frame" x="44" y="0.0" width="724" height="42.666666666666664"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wuv-eG-U1w" secondAttribute="height" multiplier="785:43" id="3x9-aL-WnC"/>
                                     <constraint firstAttribute="width" secondItem="wuv-eG-U1w" secondAttribute="height" multiplier="23:3" id="8v8-xO-Geo"/>
@@ -51,7 +51,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBm-gR-9dW">
-                                <rect key="frame" x="20" y="391" width="280" height="48"/>
+                                <rect key="frame" x="390" y="75.666666666666671" width="402" height="48"/>
                                 <color key="backgroundColor" red="0.61530375479999999" green="0.92422455550000004" blue="0.98824864629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <state key="normal" title="New Word">
@@ -62,7 +62,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sq-JA-e7x">
-                                <rect key="frame" x="20" y="335.5" width="120" height="48"/>
+                                <rect key="frame" x="389" y="143.66666666666666" width="402" height="48"/>
                                 <color key="backgroundColor" red="0.61530375480651855" green="0.92422455549240112" blue="0.98824864625930786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <state key="normal" title="Undo">
@@ -73,7 +73,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9u-dd-iKp">
-                                <rect key="frame" x="20" y="270.5" width="280" height="60"/>
+                                <rect key="frame" x="44" y="42.666666666666657" width="329" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="07F-5c-FdH"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="2mO-HY-av4"/>
@@ -141,9 +141,12 @@
                                         <exclude reference="pkl-Yb-5VY"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="23"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQR-cQ-RLg">
-                                <rect key="frame" x="180" y="335.5" width="120" height="48"/>
+                                <rect key="frame" x="390" y="211.66666666666666" width="402" height="47.999999999999972"/>
                                 <color key="backgroundColor" red="0.61530375479999999" green="0.92422455550000004" blue="0.98824864629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <state key="normal" title="Check">
@@ -154,7 +157,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiZ-0k-wuW">
-                                <rect key="frame" x="20" y="69.5" width="280" height="84"/>
+                                <rect key="frame" x="54" y="91.666666666666686" width="328" height="103"/>
                                 <color key="backgroundColor" red="0.61530375480651855" green="0.92422455549240112" blue="0.98824864625930786" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="276.5" id="Qou-1T-fpo"/>
@@ -209,7 +212,7 @@
                                 </variation>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="qnC-20-1fC">
-                                <rect key="frame" x="20" y="225.5" width="280" height="41"/>
+                                <rect key="frame" x="54" y="287" width="460" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qnC-20-1fC" secondAttribute="height" multiplier="14:1" id="7MX-We-9El"/>
                                     <constraint firstAttribute="height" constant="35" id="N73-JZ-9Sb">
@@ -266,7 +269,7 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cmA-ax-P2S">
-                                <rect key="frame" x="20" y="449" width="280" height="22"/>
+                                <rect key="frame" x="54" y="329" width="460" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cmA-ax-P2S" secondAttribute="height" multiplier="560:51" id="3Az-au-UyL"/>
                                     <constraint firstAttribute="height" constant="51" id="4B3-fI-czA"/>
@@ -316,7 +319,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKf-aa-Hdh">
-                                <rect key="frame" x="20" y="163.5" width="280" height="52"/>
+                                <rect key="frame" x="44" y="194.66666666666666" width="328" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="333" id="Kev-XH-05a"/>
                                     <constraint firstAttribute="height" constant="45" id="LQd-Qm-rPc"/>
@@ -354,6 +357,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="28"/>
                                     <mask key="constraints">
                                         <exclude reference="Kev-XH-05a"/>
                                         <include reference="LQd-Qm-rPc"/>
@@ -366,7 +370,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular">
-                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
+                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                     <mask key="constraints">
                                         <include reference="jua-pj-SFW"/>
                                         <exclude reference="l1b-tT-jda"/>
@@ -441,7 +445,9 @@
                             <constraint firstItem="3Sq-JA-e7x" firstAttribute="leading" secondItem="IKf-aa-Hdh" secondAttribute="trailing" constant="17" id="MXu-YU-BUU">
                                 <variation key="heightClass=compact-widthClass=regular" constant="19"/>
                             </constraint>
-                            <constraint firstItem="jiZ-0k-wuW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mae-qK-x4n"/>
+                            <constraint firstItem="jiZ-0k-wuW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mae-qK-x4n">
+                                <variation key="heightClass=compact-widthClass=compact" constant="10"/>
+                            </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cmA-ax-P2S" secondAttribute="trailing" symbolic="YES" id="NGA-mq-h7z"/>
                             <constraint firstItem="3Sq-JA-e7x" firstAttribute="top" secondItem="fBm-gR-9dW" secondAttribute="bottom" constant="20" id="NL2-y5-kHd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fBm-gR-9dW" secondAttribute="trailing" constant="20" id="NM3-zY-Ek7"/>
@@ -531,7 +537,9 @@
                             <constraint firstItem="Y9u-dd-iKp" firstAttribute="leading" secondItem="jiZ-0k-wuW" secondAttribute="trailing" constant="10" id="gBa-dr-WGX">
                                 <variation key="heightClass=compact-widthClass=compact" constant="8"/>
                             </constraint>
-                            <constraint firstItem="qnC-20-1fC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gCD-AA-Qws"/>
+                            <constraint firstItem="qnC-20-1fC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gCD-AA-Qws">
+                                <variation key="heightClass=compact-widthClass=compact" constant="10"/>
+                            </constraint>
                             <constraint firstItem="cmA-ax-P2S" firstAttribute="top" secondItem="qnC-20-1fC" secondAttribute="bottom" constant="10" id="gF1-0Q-KEL"/>
                             <constraint firstAttribute="trailing" secondItem="3Sq-JA-e7x" secondAttribute="trailing" constant="20" id="guc-7P-CMC">
                                 <variation key="heightClass=compact-widthClass=compact" constant="64"/>
@@ -597,7 +605,9 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3Sq-JA-e7x" secondAttribute="trailing" constant="20" id="wn6-gj-tnD">
                                 <variation key="heightClass=compact-widthClass=compact" symbolic="YES"/>
                             </constraint>
-                            <constraint firstItem="cmA-ax-P2S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x3F-Zk-CGn"/>
+                            <constraint firstItem="cmA-ax-P2S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x3F-Zk-CGn">
+                                <variation key="heightClass=compact-widthClass=compact" constant="10"/>
+                            </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wuv-eG-U1w" secondAttribute="trailing" id="xal-U3-bME"/>
                             <constraint firstItem="Y9u-dd-iKp" firstAttribute="leading" secondItem="jiZ-0k-wuW" secondAttribute="trailing" constant="20" id="y7Q-OG-7O9"/>
                             <constraint firstItem="IKf-aa-Hdh" firstAttribute="top" secondItem="jiZ-0k-wuW" secondAttribute="bottom" id="ynX-N2-fhU"/>
