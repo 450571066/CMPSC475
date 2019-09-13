@@ -18,64 +18,180 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="osS-Uq-Gm3">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osS-Uq-Gm3">
                                 <rect key="frame" x="20" y="622" width="728" height="382"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceX" translatesAutoresizingMaskIntoConstraints="NO" id="QZd-lE-3Ox">
+                                        <rect key="frame" x="18" y="36" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceP" translatesAutoresizingMaskIntoConstraints="NO" id="d5n-wr-9Dg">
+                                        <rect key="frame" x="364" y="210" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceZ" translatesAutoresizingMaskIntoConstraints="NO" id="9F6-Fe-DBz">
+                                        <rect key="frame" x="627" y="210" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceF" translatesAutoresizingMaskIntoConstraints="NO" id="WDc-7t-xqb">
+                                        <rect key="frame" x="241" y="210" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceI" translatesAutoresizingMaskIntoConstraints="NO" id="75A-cM-RX0">
+                                        <rect key="frame" x="143" y="210" width="30" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceL" translatesAutoresizingMaskIntoConstraints="NO" id="tQ6-IT-1Uo">
+                                        <rect key="frame" x="18" y="210" width="60" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceY" translatesAutoresizingMaskIntoConstraints="NO" id="48n-iU-gfw">
+                                        <rect key="frame" x="627" y="36" width="60" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceV" translatesAutoresizingMaskIntoConstraints="NO" id="tGY-KX-fPy">
+                                        <rect key="frame" x="143" y="36" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceN" translatesAutoresizingMaskIntoConstraints="NO" id="Zzl-09-s3t">
+                                        <rect key="frame" x="271" y="36" width="60" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceT" translatesAutoresizingMaskIntoConstraints="NO" id="ByS-03-vEX">
+                                        <rect key="frame" x="364" y="36" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceU" translatesAutoresizingMaskIntoConstraints="NO" id="qHY-nU-h69">
+                                        <rect key="frame" x="496" y="36" width="90" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceW" translatesAutoresizingMaskIntoConstraints="NO" id="aNI-4m-uam">
+                                        <rect key="frame" x="496" y="210" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRZ-8g-ZQN">
-                                <rect key="frame" x="40" y="92" width="105" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Board0button.png"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRZ-8g-ZQN">
+                                <rect key="frame" x="40" y="95" width="105" height="105"/>
+                                <state key="normal" image="Board0button"/>
+                                <connections>
+                                    <action selector="Button_1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t4A-Gl-est"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsJ-O7-ec6">
-                                <rect key="frame" x="40" y="424" width="105" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Board2button.png"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsJ-O7-ec6">
+                                <rect key="frame" x="40" y="425" width="105" height="105"/>
+                                <state key="normal" image="Board2button"/>
+                                <connections>
+                                    <action selector="Button_3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O6k-Jq-S3f"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBN-PU-1LW">
-                                <rect key="frame" x="40" y="258" width="105" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Board1button.png"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBN-PU-1LW">
+                                <rect key="frame" x="40" y="260" width="105" height="105"/>
+                                <state key="normal" image="Board1button"/>
+                                <connections>
+                                    <action selector="Button_2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tfN-ye-Ocl"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHM-iw-9g5">
-                                <rect key="frame" x="627" y="424" width="105" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Board5button.png"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHM-iw-9g5">
+                                <rect key="frame" x="623" y="425" width="105" height="105"/>
+                                <state key="normal" image="Board5button"/>
+                                <connections>
+                                    <action selector="Button_6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Odj-nc-L9r"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0j-3o-AbI">
-                                <rect key="frame" x="627" y="258" width="105" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Board4button.png"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0j-3o-AbI">
+                                <rect key="frame" x="623" y="260" width="105" height="105"/>
+                                <state key="normal" image="Board4button"/>
+                                <connections>
+                                    <action selector="Button_5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ou6-Do-xMb"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAw-OF-ACk">
-                                <rect key="frame" x="627" y="92" width="105" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Board3button.png"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAw-OF-ACk">
+                                <rect key="frame" x="623" y="95" width="105" height="105"/>
+                                <state key="normal" image="Board3button"/>
+                                <connections>
+                                    <action selector="Button_4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tAc-ts-zes"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Board0.png" translatesAutoresizingMaskIntoConstraints="NO" id="fSI-c7-v4X">
-                                <rect key="frame" x="153" y="92" width="466" height="437"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enV-d9-ya4">
-                                <rect key="frame" x="99" y="560" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enV-d9-ya4">
+                                <rect key="frame" x="103.5" y="557" width="67" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Solve"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAS-l6-KLD">
-                                <rect key="frame" x="333" y="560" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAS-l6-KLD">
+                                <rect key="frame" x="350.5" y="557" width="67" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Hint"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzI-0V-slR">
-                                <rect key="frame" x="573" y="560" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzI-0V-slR">
+                                <rect key="frame" x="597.5" y="557" width="67" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Reset"/>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7M-mt-Hkz">
+                                <rect key="frame" x="174" y="95" width="420" height="420"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Board0" translatesAutoresizingMaskIntoConstraints="NO" id="tym-UU-lH5">
+                                        <rect key="frame" x="0.0" y="0.0" width="420" height="420"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="tym-UU-lH5" firstAttribute="leading" secondItem="M7M-mt-Hkz" secondAttribute="leading" id="Enc-Mm-deB"/>
+                                    <constraint firstAttribute="bottom" secondItem="tym-UU-lH5" secondAttribute="bottom" id="FZw-XL-d8y"/>
+                                    <constraint firstItem="tym-UU-lH5" firstAttribute="top" secondItem="M7M-mt-Hkz" secondAttribute="top" id="XiE-cL-BEO"/>
+                                    <constraint firstAttribute="trailing" secondItem="tym-UU-lH5" secondAttribute="trailing" id="vg9-Lw-1bo"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.13952583196965984" green="0.85906197780430915" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="osS-Uq-Gm3" secondAttribute="bottom" constant="20" id="0Ja-yE-5eA"/>
+                            <constraint firstItem="lBN-PU-1LW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="1RD-ra-MHc"/>
+                            <constraint firstItem="pRZ-8g-ZQN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="5Al-JS-hrm"/>
+                            <constraint firstItem="cAS-l6-KLD" firstAttribute="height" secondItem="enV-d9-ya4" secondAttribute="height" id="7UP-hp-N6M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MAw-OF-ACk" secondAttribute="trailing" constant="40" id="8kl-s5-KMc"/>
+                            <constraint firstItem="wsJ-O7-ec6" firstAttribute="top" secondItem="lBN-PU-1LW" secondAttribute="bottom" constant="60" id="9gr-qq-voX"/>
+                            <constraint firstItem="lBN-PU-1LW" firstAttribute="top" secondItem="pRZ-8g-ZQN" secondAttribute="bottom" constant="60" id="AJg-7Y-1xD"/>
+                            <constraint firstItem="UzI-0V-slR" firstAttribute="height" secondItem="enV-d9-ya4" secondAttribute="height" id="CaE-rZ-LDv"/>
+                            <constraint firstItem="gHM-iw-9g5" firstAttribute="width" secondItem="pRZ-8g-ZQN" secondAttribute="width" id="Cmi-ze-nvL"/>
+                            <constraint firstItem="lBN-PU-1LW" firstAttribute="height" secondItem="pRZ-8g-ZQN" secondAttribute="height" id="HET-Sf-3UJ"/>
+                            <constraint firstItem="osS-Uq-Gm3" firstAttribute="top" secondItem="UzI-0V-slR" secondAttribute="bottom" constant="20" id="HXF-gh-QjP"/>
+                            <constraint firstItem="MAw-OF-ACk" firstAttribute="width" secondItem="pRZ-8g-ZQN" secondAttribute="width" id="IaH-a8-5bf"/>
+                            <constraint firstItem="UzI-0V-slR" firstAttribute="width" secondItem="enV-d9-ya4" secondAttribute="width" id="Jf3-fj-pra"/>
+                            <constraint firstItem="wsJ-O7-ec6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Kqi-we-fWW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gHM-iw-9g5" secondAttribute="trailing" constant="40" id="LKh-vJ-yiN"/>
+                            <constraint firstItem="J0j-3o-AbI" firstAttribute="top" secondItem="MAw-OF-ACk" secondAttribute="bottom" constant="60" id="MNT-hW-W5p"/>
+                            <constraint firstItem="M7M-mt-Hkz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MVk-Gm-qcM"/>
+                            <constraint firstItem="MAw-OF-ACk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="NU8-dd-5pM"/>
+                            <constraint firstItem="wsJ-O7-ec6" firstAttribute="width" secondItem="pRZ-8g-ZQN" secondAttribute="width" id="ONV-q2-cbk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UzI-0V-slR" secondAttribute="trailing" symbolic="YES" id="QV8-LC-EkP"/>
+                            <constraint firstItem="pRZ-8g-ZQN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Qmi-DB-9AL"/>
+                            <constraint firstItem="osS-Uq-Gm3" firstAttribute="top" secondItem="enV-d9-ya4" secondAttribute="bottom" constant="20" id="Sh9-z5-dx8"/>
+                            <constraint firstItem="osS-Uq-Gm3" firstAttribute="top" secondItem="cAS-l6-KLD" secondAttribute="bottom" constant="20" id="UoR-CG-ir2"/>
+                            <constraint firstItem="enV-d9-ya4" firstAttribute="top" secondItem="wsJ-O7-ec6" secondAttribute="bottom" constant="27" id="W3J-fG-TPt"/>
+                            <constraint firstItem="UzI-0V-slR" firstAttribute="leading" secondItem="cAS-l6-KLD" secondAttribute="trailing" constant="180" id="WZd-XR-Qyz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="osS-Uq-Gm3" secondAttribute="trailing" constant="20" id="Yqx-dU-PtJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J0j-3o-AbI" secondAttribute="trailing" constant="40" id="bmX-wc-j3D"/>
+                            <constraint firstItem="J0j-3o-AbI" firstAttribute="width" secondItem="pRZ-8g-ZQN" secondAttribute="width" id="buC-Qb-H2H"/>
+                            <constraint firstItem="cAS-l6-KLD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="crA-k8-Oxf"/>
+                            <constraint firstItem="J0j-3o-AbI" firstAttribute="height" secondItem="pRZ-8g-ZQN" secondAttribute="height" id="dYX-kt-IGS"/>
+                            <constraint firstItem="MAw-OF-ACk" firstAttribute="height" secondItem="pRZ-8g-ZQN" secondAttribute="height" id="eNA-xp-Bgc"/>
+                            <constraint firstItem="lBN-PU-1LW" firstAttribute="width" secondItem="pRZ-8g-ZQN" secondAttribute="width" id="esb-jc-BpP"/>
+                            <constraint firstItem="wsJ-O7-ec6" firstAttribute="height" secondItem="pRZ-8g-ZQN" secondAttribute="height" id="fR5-jj-TDC"/>
+                            <constraint firstItem="cAS-l6-KLD" firstAttribute="width" secondItem="enV-d9-ya4" secondAttribute="width" id="kT8-cA-6SE"/>
+                            <constraint firstItem="gHM-iw-9g5" firstAttribute="top" secondItem="J0j-3o-AbI" secondAttribute="bottom" constant="60" id="qWC-3X-KN5"/>
+                            <constraint firstItem="cAS-l6-KLD" firstAttribute="leading" secondItem="enV-d9-ya4" secondAttribute="trailing" constant="180" id="sJI-Im-ldr"/>
+                            <constraint firstItem="gHM-iw-9g5" firstAttribute="height" secondItem="pRZ-8g-ZQN" secondAttribute="height" id="sPv-aa-yG4"/>
+                            <constraint firstItem="osS-Uq-Gm3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tlT-pW-QcF"/>
+                            <constraint firstItem="M7M-mt-Hkz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="xFg-ZT-TtI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mainBoard" destination="tym-UU-lH5" id="JNc-IG-Nh6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,12 +199,24 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Board0.png" width="420" height="420"/>
-        <image name="Board0button.png" width="105" height="105"/>
-        <image name="Board1button.png" width="105" height="105"/>
-        <image name="Board2button.png" width="105" height="105"/>
-        <image name="Board3button.png" width="105" height="105"/>
-        <image name="Board4button.png" width="105" height="105"/>
-        <image name="Board5button.png" width="105" height="105"/>
+        <image name="Board0" width="420" height="420"/>
+        <image name="Board0button" width="105" height="105"/>
+        <image name="Board1button" width="105" height="105"/>
+        <image name="Board2button" width="105" height="105"/>
+        <image name="Board3button" width="105" height="105"/>
+        <image name="Board4button" width="105" height="105"/>
+        <image name="Board5button" width="105" height="105"/>
+        <image name="PieceF" width="90" height="90"/>
+        <image name="PieceI" width="30" height="150"/>
+        <image name="PieceL" width="60" height="120"/>
+        <image name="PieceN" width="60" height="120"/>
+        <image name="PieceP" width="60" height="90"/>
+        <image name="PieceT" width="90" height="90"/>
+        <image name="PieceU" width="90" height="60"/>
+        <image name="PieceV" width="90" height="90"/>
+        <image name="PieceW" width="90" height="90"/>
+        <image name="PieceX" width="90" height="90"/>
+        <image name="PieceY" width="60" height="120"/>
+        <image name="PieceZ" width="90" height="90"/>
     </resources>
 </document>
