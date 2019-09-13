@@ -13,6 +13,7 @@
 		13F5BAA6232C14010071076F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13F5BAA5232C14010071076F /* Assets.xcassets */; };
 		13F5BAA9232C14010071076F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F5BAA7232C14010071076F /* LaunchScreen.storyboard */; };
 		13F5BAB4232C14010071076F /* PentominoesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F5BAB3232C14010071076F /* PentominoesTests.swift */; };
+		13F5BABF232C1B980071076F /* Pentominoes Assets in Resources */ = {isa = PBXBuildFile; fileRef = 13F5BABE232C1B980071076F /* Pentominoes Assets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		13F5BAAF232C14010071076F /* PentominoesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PentominoesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F5BAB3232C14010071076F /* PentominoesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PentominoesTests.swift; sourceTree = "<group>"; };
 		13F5BAB5232C14010071076F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13F5BABE232C1B980071076F /* Pentominoes Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Pentominoes Assets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				13F5BAA5232C14010071076F /* Assets.xcassets */,
 				13F5BAA7232C14010071076F /* LaunchScreen.storyboard */,
 				13F5BAAA232C14010071076F /* Info.plist */,
+				13F5BABE232C1B980071076F /* Pentominoes Assets */,
 			);
 			path = Pentominoes;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			files = (
 				13F5BAA9232C14010071076F /* LaunchScreen.storyboard in Resources */,
 				13F5BAA6232C14010071076F /* Assets.xcassets in Resources */,
+				13F5BABF232C1B980071076F /* Pentominoes Assets in Resources */,
 				13F5BAA4232C13FF0071076F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
