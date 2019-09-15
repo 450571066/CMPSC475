@@ -15,6 +15,7 @@
 		13F5BAB4232C14010071076F /* PentominoesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F5BAB3232C14010071076F /* PentominoesTests.swift */; };
 		13F5BAC1232C22840071076F /* Solutions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13F5BAC0232C22840071076F /* Solutions.plist */; };
 		13F5BAC3232C22890071076F /* PentominoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F5BAC2232C22890071076F /* PentominoModel.swift */; };
+		13F5BAC7232DDADE0071076F /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F5BAC6232DDADE0071076F /* Piece.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		13F5BAB5232C14010071076F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13F5BAC0232C22840071076F /* Solutions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Solutions.plist; path = "Pentominoes Assets/Solutions.plist"; sourceTree = "<group>"; };
 		13F5BAC2232C22890071076F /* PentominoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PentominoModel.swift; path = "Pentominoes Assets/PentominoModel.swift"; sourceTree = "<group>"; };
+		13F5BAC6232DDADE0071076F /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				13F5BAA5232C14010071076F /* Assets.xcassets */,
 				13F5BAA7232C14010071076F /* LaunchScreen.storyboard */,
 				13F5BAAA232C14010071076F /* Info.plist */,
+				13F5BAC6232DDADE0071076F /* Piece.swift */,
 			);
 			path = Pentominoes;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13F5BAC7232DDADE0071076F /* Piece.swift in Sources */,
 				13F5BAA1232C13FF0071076F /* ViewController.swift in Sources */,
 				13F5BA9F232C13FF0071076F /* AppDelegate.swift in Sources */,
 				13F5BAC3232C22890071076F /* PentominoModel.swift in Sources */,

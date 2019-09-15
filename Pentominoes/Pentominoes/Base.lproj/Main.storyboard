@@ -20,104 +20,57 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osS-Uq-Gm3">
                                 <rect key="frame" x="20" y="622" width="728" height="382"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceX" translatesAutoresizingMaskIntoConstraints="NO" id="QZd-lE-3Ox">
-                                        <rect key="frame" x="18" y="36" width="90" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceP" translatesAutoresizingMaskIntoConstraints="NO" id="d5n-wr-9Dg">
-                                        <rect key="frame" x="364" y="210" width="90" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceZ" translatesAutoresizingMaskIntoConstraints="NO" id="9F6-Fe-DBz">
-                                        <rect key="frame" x="627" y="210" width="90" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceF" translatesAutoresizingMaskIntoConstraints="NO" id="WDc-7t-xqb">
-                                        <rect key="frame" x="241" y="210" width="90" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceI" translatesAutoresizingMaskIntoConstraints="NO" id="75A-cM-RX0">
-                                        <rect key="frame" x="143" y="210" width="30" height="150"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceL" translatesAutoresizingMaskIntoConstraints="NO" id="tQ6-IT-1Uo">
-                                        <rect key="frame" x="18" y="210" width="60" height="120"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceY" translatesAutoresizingMaskIntoConstraints="NO" id="48n-iU-gfw">
-                                        <rect key="frame" x="627" y="36" width="60" height="120"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceV" translatesAutoresizingMaskIntoConstraints="NO" id="tGY-KX-fPy">
-                                        <rect key="frame" x="143" y="36" width="90" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceN" translatesAutoresizingMaskIntoConstraints="NO" id="Zzl-09-s3t">
-                                        <rect key="frame" x="271" y="36" width="60" height="120"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceT" translatesAutoresizingMaskIntoConstraints="NO" id="ByS-03-vEX">
-                                        <rect key="frame" x="364" y="36" width="90" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceU" translatesAutoresizingMaskIntoConstraints="NO" id="qHY-nU-h69">
-                                        <rect key="frame" x="496" y="36" width="90" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PieceW" translatesAutoresizingMaskIntoConstraints="NO" id="aNI-4m-uam">
-                                        <rect key="frame" x="496" y="210" width="90" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRZ-8g-ZQN">
                                 <rect key="frame" x="40" y="95" width="105" height="105"/>
                                 <state key="normal" image="Board0button"/>
                                 <connections>
-                                    <action selector="Button_1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t4A-Gl-est"/>
+                                    <action selector="changeboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jR1-91-Jyh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsJ-O7-ec6">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsJ-O7-ec6">
                                 <rect key="frame" x="40" y="425" width="105" height="105"/>
                                 <state key="normal" image="Board2button"/>
                                 <connections>
-                                    <action selector="Button_3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O6k-Jq-S3f"/>
+                                    <action selector="changeboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rLJ-9a-uXQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBN-PU-1LW">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBN-PU-1LW">
                                 <rect key="frame" x="40" y="260" width="105" height="105"/>
                                 <state key="normal" image="Board1button"/>
                                 <connections>
-                                    <action selector="Button_2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tfN-ye-Ocl"/>
+                                    <action selector="changeboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="79Q-2e-xnb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHM-iw-9g5">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHM-iw-9g5">
                                 <rect key="frame" x="623" y="425" width="105" height="105"/>
                                 <state key="normal" image="Board5button"/>
                                 <connections>
-                                    <action selector="Button_6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Odj-nc-L9r"/>
+                                    <action selector="changeboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kHq-YX-ZSU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0j-3o-AbI">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0j-3o-AbI">
                                 <rect key="frame" x="623" y="260" width="105" height="105"/>
                                 <state key="normal" image="Board4button"/>
                                 <connections>
-                                    <action selector="Button_5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ou6-Do-xMb"/>
+                                    <action selector="changeboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ie9-aC-dwC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAw-OF-ACk">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAw-OF-ACk">
                                 <rect key="frame" x="623" y="95" width="105" height="105"/>
                                 <state key="normal" image="Board3button"/>
                                 <connections>
-                                    <action selector="Button_4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tAc-ts-zes"/>
+                                    <action selector="changeboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XAZ-Jz-BSU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enV-d9-ya4">
                                 <rect key="frame" x="103.5" y="557" width="67" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Solve"/>
+                                <connections>
+                                    <action selector="solveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Baj-zY-ZUR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAS-l6-KLD">
                                 <rect key="frame" x="350.5" y="557" width="67" height="45"/>
@@ -128,6 +81,9 @@
                                 <rect key="frame" x="597.5" y="557" width="67" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fom-Vz-ggU"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7M-mt-Hkz">
                                 <rect key="frame" x="174" y="95" width="420" height="420"/>
@@ -156,6 +112,7 @@
                             <constraint firstItem="lBN-PU-1LW" firstAttribute="top" secondItem="pRZ-8g-ZQN" secondAttribute="bottom" constant="60" id="AJg-7Y-1xD"/>
                             <constraint firstItem="UzI-0V-slR" firstAttribute="height" secondItem="enV-d9-ya4" secondAttribute="height" id="CaE-rZ-LDv"/>
                             <constraint firstItem="gHM-iw-9g5" firstAttribute="width" secondItem="pRZ-8g-ZQN" secondAttribute="width" id="Cmi-ze-nvL"/>
+                            <constraint firstItem="enV-d9-ya4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="103.5" id="G07-md-9Sn"/>
                             <constraint firstItem="lBN-PU-1LW" firstAttribute="height" secondItem="pRZ-8g-ZQN" secondAttribute="height" id="HET-Sf-3UJ"/>
                             <constraint firstItem="osS-Uq-Gm3" firstAttribute="top" secondItem="UzI-0V-slR" secondAttribute="bottom" constant="20" id="HXF-gh-QjP"/>
                             <constraint firstItem="MAw-OF-ACk" firstAttribute="width" secondItem="pRZ-8g-ZQN" secondAttribute="width" id="IaH-a8-5bf"/>
@@ -182,15 +139,23 @@
                             <constraint firstItem="wsJ-O7-ec6" firstAttribute="height" secondItem="pRZ-8g-ZQN" secondAttribute="height" id="fR5-jj-TDC"/>
                             <constraint firstItem="cAS-l6-KLD" firstAttribute="width" secondItem="enV-d9-ya4" secondAttribute="width" id="kT8-cA-6SE"/>
                             <constraint firstItem="gHM-iw-9g5" firstAttribute="top" secondItem="J0j-3o-AbI" secondAttribute="bottom" constant="60" id="qWC-3X-KN5"/>
-                            <constraint firstItem="cAS-l6-KLD" firstAttribute="leading" secondItem="enV-d9-ya4" secondAttribute="trailing" constant="180" id="sJI-Im-ldr"/>
                             <constraint firstItem="gHM-iw-9g5" firstAttribute="height" secondItem="pRZ-8g-ZQN" secondAttribute="height" id="sPv-aa-yG4"/>
                             <constraint firstItem="osS-Uq-Gm3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tlT-pW-QcF"/>
+                            <constraint firstItem="cAS-l6-KLD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="enV-d9-ya4" secondAttribute="trailing" constant="8" symbolic="YES" id="wMr-D3-nmU"/>
                             <constraint firstItem="M7M-mt-Hkz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="xFg-ZT-TtI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="MainView" destination="M7M-mt-Hkz" id="NbL-Vh-nCg"/>
                         <outlet property="mainBoard" destination="tym-UU-lH5" id="JNc-IG-Nh6"/>
+                        <outlet property="waitingBoard" destination="osS-Uq-Gm3" id="Nn5-yk-JAj"/>
+                        <outletCollection property="Buttons" destination="pRZ-8g-ZQN" collectionClass="NSMutableArray" id="lts-Ib-n2N"/>
+                        <outletCollection property="Buttons" destination="lBN-PU-1LW" collectionClass="NSMutableArray" id="0Fq-K5-fiR"/>
+                        <outletCollection property="Buttons" destination="wsJ-O7-ec6" collectionClass="NSMutableArray" id="del-bu-5wh"/>
+                        <outletCollection property="Buttons" destination="MAw-OF-ACk" collectionClass="NSMutableArray" id="pyy-hv-LPW"/>
+                        <outletCollection property="Buttons" destination="J0j-3o-AbI" collectionClass="NSMutableArray" id="zE9-Hd-1hC"/>
+                        <outletCollection property="Buttons" destination="gHM-iw-9g5" collectionClass="NSMutableArray" id="FwU-9H-8eQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -206,17 +171,5 @@
         <image name="Board3button" width="105" height="105"/>
         <image name="Board4button" width="105" height="105"/>
         <image name="Board5button" width="105" height="105"/>
-        <image name="PieceF" width="90" height="90"/>
-        <image name="PieceI" width="30" height="150"/>
-        <image name="PieceL" width="60" height="120"/>
-        <image name="PieceN" width="60" height="120"/>
-        <image name="PieceP" width="60" height="90"/>
-        <image name="PieceT" width="90" height="90"/>
-        <image name="PieceU" width="90" height="60"/>
-        <image name="PieceV" width="90" height="90"/>
-        <image name="PieceW" width="90" height="90"/>
-        <image name="PieceX" width="90" height="90"/>
-        <image name="PieceY" width="60" height="120"/>
-        <image name="PieceZ" width="90" height="90"/>
     </resources>
 </document>
