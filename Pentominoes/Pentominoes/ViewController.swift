@@ -85,6 +85,8 @@ extension UIImage {
 class ViewController: UIViewController {
     
 
+    @IBOutlet weak var solveButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var mainBoard: UIImageView!
     @IBOutlet weak var waitingBoard: UIView!
     @IBOutlet var Buttons: [UIButton]!
@@ -105,21 +107,35 @@ class ViewController: UIViewController {
             piecePosition.append(newPiece)
             count = count + 1
         }
+        resetButton.isEnabled = false
+        resetButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
+        solveButton.isEnabled = false
+        solveButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
         
     }
 
     @IBAction func changeboard(_ sender: UIButton) {
         mainBoard.image = UIImage(named: "Board" + String(sender.tag))
         currentBoard = sender.tag
+        if currentBoard == 0{
+            solveButton.isEnabled = false
+            solveButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
+        }
+        if currentBoard != 0{
+            solveButton.isEnabled = true
+            solveButton.setTitleColor(#colorLiteral(red: 0, green: 0.4797514677, blue: 0.9984372258, alpha: 1), for: .normal)
+        }
     }
     
   
+    @IBAction func solveResetButton(_ sender: UIButton) {
     
-    @IBAction func solveButton(_ sender: Any) {
+        
         if currentBoard == 0{
             return
         }
         let newSolution = model.allSolutions[currentBoard - 1]
+        var delay = 0
         for pieceView in pieceList{
             
             var newPiecePosition : Piece = piecePosition[0]
@@ -140,34 +156,47 @@ class ViewController: UIViewController {
             
             self.moveView(pieceView.PieceImageView, toSuperview: superView!)
         
-            let newCenter = isMovingToMainBoard ? CGPoint(x: Double(xPosition) + Double(width)/2.0, y: Double(yPosition) + Double(height)/2.0) : originalPieceCenter
-            /*
-            let image = UIImage(named: "Piece"+pieceView.PieceName)
-            let newImage = image?.rotate(CGFloat.pi/2.0)
-            let newImageView = UIImageView(image: newImage)
-            let newFrame =
-            */
+            var transgender = pieceView.PieceImageView.transform;
+            transgender = transgender.rotated(by: (CGFloat.pi / 2) * CGFloat(newSolution[pieceView.PieceName]!.rotations))
             
+            var newCenter = isMovingToMainBoard ? CGPoint(x: Double(xPosition) + Double(width)/2.0, y: Double(yPosition) + Double(height)/2.0) : originalPieceCenter
+            if Int(newSolution[pieceView.PieceName]!.rotations)%2 == 1{
+                newCenter = isMovingToMainBoard ? CGPoint(x: Double(xPosition) + Double(height)/2.0, y: Double(yPosition) + Double(width)/2.0) : originalPieceCenter
+            }
+        
+            if newSolution[pieceView.PieceName]!.isFlipped{
+                transgender = transgender.scaledBy(x: -1.0, y: 1.0)
+            }
             
-            UIView.animate(withDuration: 1.0, animations: { () -> Void in
-                //pieceView.PieceImageView.frame.size.height = CGFloat(width)
-                //pieceView.PieceImageView.frame.size.width = CGFloat(height)
-                //let newImage = pieceView.PieceImageView.image?.rotate(CGFloat.pi/2.0)
-                //pieceView.PieceImageView.image = newImage
-//                for i in 0...newSolution[pieceView.PieceName]!.rotations{
-//                    pieceView.PieceImageView.transform = CGAffineTransform(rotationAngle: (CGFloat.pi/2))
-//                }
-                //pieceView.PieceImageView
-                
-                if newSolution[pieceView.PieceName]!.isFlipped{
-                    pieceView.PieceImageView.transform = CGAffineTransform(scaleX: -1, y: 1)
-                }
-                pieceView.PieceImageView.transform = CGAffineTransform(rotationAngle: (CGFloat.pi / 2) * CGFloat(newSolution[pieceView.PieceName]!.rotations))
-                print(pieceView.PieceName, (CGFloat.pi / 2) * CGFloat(newSolution[pieceView.PieceName]!.rotations))
+            if !isMovingToMainBoard
+            {
+                transgender = CGAffineTransform.identity
+            }
+            UIView.animate(withDuration: 1, delay: TimeInterval(delay)/10,animations: { () -> Void in
+                pieceView.PieceImageView.transform = transgender
+            }, completion: {_ in})
+            UIView.animate(withDuration: 1,delay: TimeInterval(delay)/10, animations: {
                 pieceView.PieceImageView.center = newCenter
             })
-            
-            
+            delay = delay + 1
+        }
+        if sender.tag == 0{
+            for i in Buttons{
+                i.isEnabled = false
+            }
+            solveButton.isEnabled = false
+            solveButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
+            resetButton.isEnabled = true
+            resetButton.setTitleColor(#colorLiteral(red: 0, green: 0.4797514677, blue: 0.9984372258, alpha: 1), for: .normal)
+        }
+        else{
+            for i in Buttons{
+                i.isEnabled = true
+            }
+            resetButton.isEnabled = false
+            resetButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
+            solveButton.isEnabled = true
+            solveButton.setTitleColor(#colorLiteral(red: 0, green: 0.4797514677, blue: 0.9984372258, alpha: 1), for: .normal)
         }
  
         
@@ -179,55 +208,8 @@ class ViewController: UIViewController {
         superView.addSubview(view)
     }
     
-    @IBAction func resetButton(_ sender: Any) {
-        let newSolution = model.allSolutions[currentBoard - 1]
-        var newPiecePosition : Piece = piecePosition[0]
-        for pieceView in pieceList{
-            for i in piecePosition{
-                if i.pieceName == pieceView.PieceName{
-                    newPiecePosition = i
-                    break;
-                }
-            }
-            let xPosition = newPiecePosition.newX
-            let yPosition = newPiecePosition.newY
-            let width = Int(pieceView.PieceImageView.frame.size.width)
-            let height = Int(pieceView.PieceImageView.frame.size.height)
-            
-            //MainView.bringSubviewToFront(pieceView.PieceImageView)
-            
-            self.moveView(pieceView.PieceImageView, toSuperview: self.mainBoard!)
-            self.moveView(pieceView.PieceImageView, toSuperview: self.waitingBoard!)
-            waitingBoard.bringSubviewToFront(pieceView.PieceImageView)
-            let newCenter = CGPoint(x: Double(xPosition) + Double(width)/2.0, y: Double(yPosition) + Double(height)/2.0)
-            
-            UIView.animate(withDuration: 1.0, animations: { () -> Void in
-                //pieceView.PieceImageView.transform = CGAffineTransform(scaleX: -1, y: 1)
-//                for i in 0...newSolution[pieceView.PieceName]!.rotations{
-//                    pieceView.PieceImageView.transform = CGAffineTransform(rotationAngle: (-CGFloat.pi/2))
-//                }
-                pieceView.PieceImageView.transform = CGAffineTransform(rotationAngle: (CGFloat.pi / 2) * CGFloat(newSolution[pieceView.PieceName]!.rotations)).inverted()
-
-//                if newSolution[pieceView.PieceName]!.isFlipped{
-//                    pieceView.PieceImageView.flipX()
-//                }
-                if newSolution[pieceView.PieceName]!.isFlipped{
-                    pieceView.PieceImageView.transform = CGAffineTransform(scaleX: -1, y: 1)
-                }
-                pieceView.PieceImageView.center = newCenter
-            })
-            
-            
-            /*
-            UIView.animate(withDuration: 1.0, animations: {
-                pieceView.removeFromSuperview()
-                self.waitingBoard.addSubview(pieceView.PieceImageView)
-                pieceView.PieceImageView.frame = CGRect(x: xPosition, y: yPosition, width: width, height: height)
-            })
- */
-        }
-    }
-    
-    
 }
+    
+    
+
 
