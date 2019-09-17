@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1351E3B223308431007D6517 /* PentominoesLaunch.png in Resources */ = {isa = PBXBuildFile; fileRef = 1351E3B123308431007D6517 /* PentominoesLaunch.png */; };
 		13F5BA9F232C13FF0071076F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F5BA9E232C13FF0071076F /* AppDelegate.swift */; };
 		13F5BAA1232C13FF0071076F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F5BAA0232C13FF0071076F /* ViewController.swift */; };
 		13F5BAA4232C13FF0071076F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F5BAA2232C13FF0071076F /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1351E3B123308431007D6517 /* PentominoesLaunch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PentominoesLaunch.png; sourceTree = "<group>"; };
 		13F5BA9B232C13FF0071076F /* Pentominoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pentominoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F5BA9E232C13FF0071076F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13F5BAA0232C13FF0071076F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				13F5BAA0232C13FF0071076F /* ViewController.swift */,
 				13F5BAA2232C13FF0071076F /* Main.storyboard */,
 				13F5BAA5232C14010071076F /* Assets.xcassets */,
+				1351E3B123308431007D6517 /* PentominoesLaunch.png */,
 				13F5BAA7232C14010071076F /* LaunchScreen.storyboard */,
 				13F5BAAA232C14010071076F /* Info.plist */,
 				13F5BAC6232DDADE0071076F /* Piece.swift */,
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13F5BAA9232C14010071076F /* LaunchScreen.storyboard in Resources */,
+				1351E3B223308431007D6517 /* PentominoesLaunch.png in Resources */,
 				13F5BAC1232C22840071076F /* Solutions.plist in Resources */,
 				13F5BAA6232C14010071076F /* Assets.xcassets in Resources */,
 				13F5BAA4232C13FF0071076F /* Main.storyboard in Resources */,
