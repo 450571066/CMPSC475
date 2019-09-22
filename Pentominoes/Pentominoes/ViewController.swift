@@ -96,11 +96,13 @@ class ViewController: UIViewController {
             count = count + 1
         }
         resetButton.isEnabled = false
-        resetButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
+        resetButton.setTitleColor(#colorLiteral(red: 0.4862745098, green: 0.4862745098, blue: 0.4862745098, alpha: 1), for: .normal)
         solveButton.isEnabled = false
         solveButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
         
     }
+    
+    
 
     @IBAction func changeboard(_ sender: UIButton) {
         mainBoard.image = UIImage(named: "Board" + String(sender.tag))
