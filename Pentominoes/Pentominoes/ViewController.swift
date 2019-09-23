@@ -155,26 +155,33 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @objc func rotatePiece(_ sender: UITapGestureRecognizer){
         let piece = sender.view as! pentominoView
-        piece.RotatePlus()
-        var transgender = piece.transform;
-        transgender = transgender.rotated(by: (CGFloat.pi / 2))
-        UIView.animate(withDuration: 1,animations: { () -> Void in
-            piece.transform = transgender
-        }, completion: {_ in})
+        if piece.superview != waitingBoard{
+            piece.RotatePlus()
+            var transgender = piece.transform;
+            transgender = transgender.rotated(by: (CGFloat.pi / 2))
+            UIView.animate(withDuration: 1,animations: { () -> Void in
+                piece.transform = transgender
+            }, completion: {_ in})
+        }
     }
     
     @objc func flipPiece(_ sender: UITapGestureRecognizer){
         let piece = sender.view as! pentominoView
-        piece.flipNow()
-        var transgender = piece.transform;
-         transgender = transgender.scaledBy(x: -1.0, y: 1.0)
-        UIView.animate(withDuration: 1,animations: { () -> Void in
-            piece.transform = transgender
-        }, completion: {_ in})
+        if piece.superview != waitingBoard{
+            piece.flipNow()
+            var transgender = piece.transform;
+            transgender = transgender.scaledBy(x: -1.0, y: 1.0)
+            UIView.animate(withDuration: 1,animations: { () -> Void in
+                piece.transform = transgender
+            }, completion: {_ in})
+        }
+        
     }
     
     @objc func movePiece(_ sender: UIGestureRecognizer) {
         let piece = sender.view as! pentominoView
+        let height = piece.frame.height
+        let width = piece.frame.width
         //let iniLocation = sender.location(in: waitingBoard)
         let iniLocationMain = sender.location(in: MainView)
         if (MainView.frame.contains(iniLocationMain)){
@@ -187,7 +194,35 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 piece.center = location
             case .ended:
                 piece.transform.scaledBy(x: 1, y: 1)
-                let final = sender.location(in: self.MainView)
+                var final = sender.location(in: self.MainView)
+                let modX = Int(final.x)%30
+                let modY = Int(final.y)%30
+                var biasX: Int
+                var biasY: Int
+                if Int(width/30)%2 == 1{
+                    biasX = 15
+                }
+                else{
+                    biasX = 0
+                }
+                if Int(height/30)%2 == 1{
+                    biasY = 15
+                }
+                else{
+                    biasY = 0
+                }
+                if(modX >= 15){
+                    final.x = final.x + 30 - CGFloat(modX) + CGFloat(biasX)
+                }
+                else{
+                    final.x = final.x - CGFloat(modX) + CGFloat(biasX)
+                }
+                if(modY >= 15){
+                    final.y = final.y + 30 - CGFloat(modY) + CGFloat(biasY)
+                }
+                else{
+                    final.y = final.y - CGFloat(modY) + CGFloat(biasY)
+                }
                 if (mainBoard.frame.contains(final)){
                     piece.removeFromSuperview()
                     piece.center = final
@@ -233,7 +268,35 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 
             case .ended:
                 piece.transform.scaledBy(x: 1, y: 1)
-                let final = sender.location(in: self.MainView)
+                var final = sender.location(in: self.MainView)
+                let modX = Int(final.x)%30
+                let modY = Int(final.y)%30
+                var biasX: Int
+                var biasY: Int
+                if Int(width/30)%2 == 1{
+                    biasX = 15
+                }
+                else{
+                    biasX = 0
+                }
+                if Int(height/30)%2 == 1{
+                    biasY = 15
+                }
+                else{
+                    biasY = 0
+                }
+                if(modX >= 15){
+                    final.x = final.x + 30 - CGFloat(modX) + CGFloat(biasX)
+                }
+                else{
+                    final.x = final.x - CGFloat(modX) + CGFloat(biasX)
+                }
+                if(modY >= 15){
+                    final.y = final.y + 30 - CGFloat(modY) + CGFloat(biasY)
+                }
+                else{
+                    final.y = final.y - CGFloat(modY) + CGFloat(biasY)
+                }
                 if (mainBoard.frame.contains(final)){
                     piece.removeFromSuperview()
                     piece.center = final
@@ -315,7 +378,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
             var transgender = pieceView.transform;
             let setRotate = newSolution[pieceView.PieceName]!.rotations
-            let realRotate = 4 - (4+rotateTimes%4) + setRotate
+            var realRotate: Int
+            if flipTimes{
+                 realRotate = (4 - (rotateTimes%4) + setRotate) * 3
+            }
+            else{
+                 realRotate = 4 - (rotateTimes%4) + setRotate
+            }
+            
             transgender = transgender.rotated(by: (CGFloat.pi / 2) * CGFloat(realRotate))
             
             var newCenter = isMovingToMainBoard ? CGPoint(x: Double(xPosition) + Double(width)/2.0, y: Double(yPosition) + Double(height)/2.0) : originalPieceCenter
