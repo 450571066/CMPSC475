@@ -152,6 +152,7 @@
                         <outlet property="mainBoard" destination="tym-UU-lH5" id="JNc-IG-Nh6"/>
                         <outlet property="resetButton" destination="UzI-0V-slR" id="Gtx-kO-XND"/>
                         <outlet property="solveButton" destination="enV-d9-ya4" id="sDU-ev-AgX"/>
+                        <outlet property="totalView" destination="8bC-Xf-vdC" id="um6-r1-FwO"/>
                         <outlet property="waitingBoard" destination="osS-Uq-Gm3" id="Nn5-yk-JAj"/>
                         <outletCollection property="Buttons" destination="pRZ-8g-ZQN" collectionClass="NSMutableArray" id="lts-Ib-n2N"/>
                         <outletCollection property="Buttons" destination="lBN-PU-1LW" collectionClass="NSMutableArray" id="0Fq-K5-fiR"/>
