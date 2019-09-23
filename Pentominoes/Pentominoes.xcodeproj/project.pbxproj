@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1351E3B223308431007D6517 /* PentominoesLaunch.png in Resources */ = {isa = PBXBuildFile; fileRef = 1351E3B123308431007D6517 /* PentominoesLaunch.png */; };
+		13DB3D4923385EFF00A6C71D /* PointFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DB3D4823385EFF00A6C71D /* PointFilter.swift */; };
 		13F5BA9F232C13FF0071076F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F5BA9E232C13FF0071076F /* AppDelegate.swift */; };
 		13F5BAA1232C13FF0071076F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F5BAA0232C13FF0071076F /* ViewController.swift */; };
 		13F5BAA4232C13FF0071076F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F5BAA2232C13FF0071076F /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		1351E3B123308431007D6517 /* PentominoesLaunch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PentominoesLaunch.png; sourceTree = "<group>"; };
+		13DB3D4823385EFF00A6C71D /* PointFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointFilter.swift; sourceTree = "<group>"; };
 		13F5BA9B232C13FF0071076F /* Pentominoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pentominoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F5BA9E232C13FF0071076F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13F5BAA0232C13FF0071076F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				13F5BAA7232C14010071076F /* LaunchScreen.storyboard */,
 				13F5BAAA232C14010071076F /* Info.plist */,
 				13F5BAC6232DDADE0071076F /* Piece.swift */,
+				13DB3D4823385EFF00A6C71D /* PointFilter.swift */,
 			);
 			path = Pentominoes;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				13F5BAC7232DDADE0071076F /* Piece.swift in Sources */,
 				13F5BAA1232C13FF0071076F /* ViewController.swift in Sources */,
 				13F5BA9F232C13FF0071076F /* AppDelegate.swift in Sources */,
+				13DB3D4923385EFF00A6C71D /* PointFilter.swift in Sources */,
 				13F5BAC3232C22890071076F /* PentominoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

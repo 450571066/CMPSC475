@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // identifies placement of a single pentomino on a board
 struct Position : Codable {
@@ -41,3 +42,64 @@ class Model {
     
 
 }
+
+
+class pentominoView : UIImageView {
+    var PieceName : String
+    var rotateTimes: Int
+    var isFlip: Bool
+    
+    convenience init(piece:String) {
+        self.init(frame: CGRect.zero)
+        let image = UIImage(named: "Piece" + piece)
+        self.image = image
+        PieceName = piece
+        rotateTimes = 0
+        isFlip = false
+    }
+    
+    override init(frame: CGRect) {
+        PieceName = ""
+        rotateTimes = 0
+        isFlip = false
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder:NSCoder) {
+        PieceName = ""
+        rotateTimes = 0
+        isFlip = false
+        super.init(coder: aDecoder)
+    }
+    
+    func getRotate() -> Int{
+        return rotateTimes
+    }
+    
+    func getFlip() -> Bool{
+        return isFlip
+    }
+    
+    func RotatePlus(){
+        if isFlip == false{
+            self.rotateTimes = self.rotateTimes + 1
+        }
+        else{
+            self.rotateTimes = self.rotateTimes + 3
+        }
+    }
+    
+    func flipNow(){
+        self.isFlip = !self.isFlip
+    }
+    
+    func resetRotate(){
+        self.rotateTimes = 0
+    }
+    
+    func resetFLip(){
+        self.isFlip = false
+    }
+}
+
+

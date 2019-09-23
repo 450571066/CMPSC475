@@ -15,65 +15,6 @@ var piecePosition : [Piece] = []
 var currentBoard: Int = 0
 
 
-class pentominoView : UIImageView {
-    var PieceName : String
-    var rotateTimes: Int
-    var isFlip: Bool
-    
-    convenience init(piece:String) {
-        self.init(frame: CGRect.zero)
-        let image = UIImage(named: "Piece" + piece)
-        self.image = image
-        PieceName = piece
-        rotateTimes = 0
-        isFlip = false
-    }
-    
-    override init(frame: CGRect) {
-        PieceName = ""
-        rotateTimes = 0
-        isFlip = false
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder:NSCoder) {
-        PieceName = ""
-        rotateTimes = 0
-        isFlip = false
-        super.init(coder: aDecoder)
-    }
-    
-    func getRotate() -> Int{
-        return rotateTimes
-    }
-    
-    func getFlip() -> Bool{
-        return isFlip
-    }
-    
-    func RotatePlus(){
-        if isFlip == false{
-            self.rotateTimes = self.rotateTimes + 1
-        }
-        else{
-            self.rotateTimes = self.rotateTimes + 3
-        }
-    }
-    
-    func flipNow(){
-        self.isFlip = !self.isFlip
-    }
-    
-    func resetRotate(){
-        self.rotateTimes = 0
-    }
-    
-    func resetFLip(){
-        self.isFlip = false
-    }
-}
-
-
 
 extension UIImage {
     func rotate(_ radians: CGFloat) -> UIImage {
@@ -180,148 +121,49 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @objc func movePiece(_ sender: UIGestureRecognizer) {
         let piece = sender.view as! pentominoView
+        let superview = piece.superview
         let height = piece.frame.height
         let width = piece.frame.width
-        //let iniLocation = sender.location(in: waitingBoard)
-        let iniLocationMain = sender.location(in: MainView)
-        if (MainView.frame.contains(iniLocationMain)){
-            switch sender.state {
-            case .began:
-                piece.transform.scaledBy(x: kMoveScaleFactor, y: kMoveScaleFactor)
-                self.view.bringSubviewToFront(piece)
-            case .changed:
-                let location = sender.location(in: MainView)
-                piece.center = location
-            case .ended:
-                piece.transform.scaledBy(x: 1, y: 1)
-                var final = sender.location(in: self.MainView)
-                let modX = Int(final.x)%30
-                let modY = Int(final.y)%30
-                var biasX: Int
-                var biasY: Int
-                if Int(width/30)%2 == 1{
-                    biasX = 15
-                }
-                else{
-                    biasX = 0
-                }
-                if Int(height/30)%2 == 1{
-                    biasY = 15
-                }
-                else{
-                    biasY = 0
-                }
-                if(modX >= 15){
-                    final.x = final.x + 30 - CGFloat(modX) + CGFloat(biasX)
-                }
-                else{
-                    final.x = final.x - CGFloat(modX) + CGFloat(biasX)
-                }
-                if(modY >= 15){
-                    final.y = final.y + 30 - CGFloat(modY) + CGFloat(biasY)
-                }
-                else{
-                    final.y = final.y - CGFloat(modY) + CGFloat(biasY)
-                }
-                if (mainBoard.frame.contains(final)){
-                    piece.removeFromSuperview()
-                    piece.center = final
-                    MainView.addSubview(piece)
-                    MainView.bringSubviewToFront(piece)
-                }
-                else{
-                    var newPiecePosition : Piece = piecePosition[0]
-                    for i in piecePosition{
-                        if i.pieceName == piece.PieceName{
-                            newPiecePosition = i
-                            break;
-                        }
-                    }
-                    let originalPieceCenter = CGPoint.init(x: Double(newPiecePosition.newX) + Double(newPiecePosition.newWidth)/2.0, y: Double(newPiecePosition.newY) + Double(newPiecePosition.newHeight)/2.0)
-                    UIView.animate(withDuration: 1,animations: { () -> Void in
-                        piece.center = originalPieceCenter
-                    }, completion: {_ in})
-                    
-                    piece.removeFromSuperview()
-                    waitingBoard.addSubview(piece)
-                }
+        totalView.bringSubviewToFront(waitingBoard)
+        switch sender.state {
+        case .began:
+            piece.transform.scaledBy(x: kMoveScaleFactor, y: kMoveScaleFactor)
+            self.view.bringSubviewToFront(piece)
+        case .changed:
+            let location = sender.location(in: superview)
+            piece.center = location
+        case .ended:
+            piece.transform.scaledBy(x: 1, y: 1)
+            var final = sender.location(in: self.MainView)
+            final = pointFilter(current: final, height: height, width: width)
+            if (mainBoard.frame.contains(final)){
                 
-            default:
-                break
+                self.moveView(piece, toSuperview: MainView!)
+                MainView.bringSubviewToFront(piece)
+                piece.center = final
+                
             }
-        }
-        else{
-            switch sender.state {
-            case .began:
-                piece.transform.scaledBy(x: kMoveScaleFactor, y: kMoveScaleFactor)
-        
-                self.view.bringSubviewToFront(piece)
-            case .changed:
-                if(mainBoard.frame.contains(sender.location(in: mainBoard))){
-                    let location = sender.location(in: mainBoard)
-                    piece.center = location
-                }
-                else{
-                    let location = sender.location(in: waitingBoard)
-                    piece.center = location
-                }
-                
-            case .ended:
-                piece.transform.scaledBy(x: 1, y: 1)
-                var final = sender.location(in: self.MainView)
-                let modX = Int(final.x)%30
-                let modY = Int(final.y)%30
-                var biasX: Int
-                var biasY: Int
-                if Int(width/30)%2 == 1{
-                    biasX = 15
-                }
-                else{
-                    biasX = 0
-                }
-                if Int(height/30)%2 == 1{
-                    biasY = 15
-                }
-                else{
-                    biasY = 0
-                }
-                if(modX >= 15){
-                    final.x = final.x + 30 - CGFloat(modX) + CGFloat(biasX)
-                }
-                else{
-                    final.x = final.x - CGFloat(modX) + CGFloat(biasX)
-                }
-                if(modY >= 15){
-                    final.y = final.y + 30 - CGFloat(modY) + CGFloat(biasY)
-                }
-                else{
-                    final.y = final.y - CGFloat(modY) + CGFloat(biasY)
-                }
-                if (mainBoard.frame.contains(final)){
-                    piece.removeFromSuperview()
-                    piece.center = final
-                    MainView.addSubview(piece)
-                    MainView.bringSubviewToFront(piece)
-                }
-                else{
-                    var newPiecePosition : Piece = piecePosition[0]
-                    for i in piecePosition{
-                        if i.pieceName == piece.PieceName{
-                            newPiecePosition = i
-                            break;
-                        }
+            else{
+                self.moveView(piece, toSuperview: waitingBoard!)
+                waitingBoard.bringSubviewToFront(piece)
+                var newPiecePosition : Piece = piecePosition[0]
+                for i in piecePosition{
+                    if i.pieceName == piece.PieceName{
+                        newPiecePosition = i
+                        break;
                     }
-                    let originalPieceCenter = CGPoint.init(x: Double(newPiecePosition.newX) + Double(newPiecePosition.newWidth)/2.0, y: Double(newPiecePosition.newY) + Double(newPiecePosition.newHeight)/2.0)
-                    UIView.animate(withDuration: 1,animations: { () -> Void in
-                        piece.center = originalPieceCenter
-                    }, completion: {_ in})
-                    piece.removeFromSuperview()
-                    waitingBoard.addSubview(piece)
                 }
+                let originalPieceCenter = CGPoint.init(x: Double(newPiecePosition.newX) + Double(newPiecePosition.newWidth)/2.0, y: Double(newPiecePosition.newY) + Double(newPiecePosition.newHeight)/2.0)
+                UIView.animate(withDuration: 1,animations: { () -> Void in
+                    piece.center = originalPieceCenter
+                }, completion: {_ in})
                 
-            default:
-                break
+                
             }
+            
+        default:
+            break
+            
         }
         
     }
