@@ -41,7 +41,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         var count = 0
         for i in model.allPiece{
             let newPiece = Piece()
-            newPiece.setPiece(piece: i, count: count)
+            let waitingBoardWidth = Int(waitingBoard.frame.width)
+            newPiece.setPiece(piece: i, count: count, width: waitingBoardWidth)
             let newPieceView = pentominoView(piece : i)
             newPieceView.frame = CGRect(x: newPiece.newX, y: newPiece.newY, width: newPiece.newWidth, height: newPiece.newHeight)
             
@@ -224,6 +225,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @IBAction func ResetButton(_ sender: UIButton) {
+        hintNumber = 0
         hintButton.isEnabled = true
         
         var delay = 0

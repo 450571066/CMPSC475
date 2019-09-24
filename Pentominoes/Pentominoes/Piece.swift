@@ -27,12 +27,12 @@ class Piece{
 
     }
     
-    func setPiece(piece:String, count:Int){
+    func setPiece(piece:String, count:Int, width: Int){
         let image = UIImage(named: "Piece" + piece)
         newHeight = Int(image!.size.height)
         newWidth = Int(image!.size.width)
         
-        self.newX = 30 + (count%6) * 120
+        self.newX = 30 + (count%6) * width/6
         self.newY = 30 + (count/6) * 180
         self.imageName = "Piece" + piece
         self.pieceName = piece

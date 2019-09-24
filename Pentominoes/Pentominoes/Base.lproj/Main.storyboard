@@ -74,7 +74,7 @@
                                 <state key="normal" title="Hint"/>
                                 <connections>
                                     <action selector="hintView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FpA-oK-5vI"/>
-                                    <segue destination="syB-5a-cqr" kind="presentation" identifier="HintSegue" id="rdi-og-Vou"/>
+                                    <segue destination="syB-5a-cqr" kind="presentation" identifier="HintSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="rdi-og-Vou"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzI-0V-slR">
@@ -174,7 +174,7 @@
         <!--Hint View Controller-->
         <scene sceneID="ipa-KB-BLj">
             <objects>
-                <viewController id="syB-5a-cqr" customClass="HintViewController" customModule="Pentominoes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="syB-5a-cqr" customClass="HintViewController" customModule="Pentominoes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZGJ-F3-aF5">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,7 +215,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="i8y-Ns-d3i" firstAttribute="centerX" secondItem="ZGJ-F3-aF5" secondAttribute="centerX" id="33K-Id-NuU"/>
                             <constraint firstItem="i8y-Ns-d3i" firstAttribute="centerY" secondItem="ZGJ-F3-aF5" secondAttribute="centerY" id="chf-Mm-gW5"/>
