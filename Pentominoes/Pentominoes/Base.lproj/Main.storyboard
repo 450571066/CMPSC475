@@ -65,20 +65,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Solve"/>
                                 <connections>
-                                    <action selector="solveResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wvX-rb-8oH"/>
+                                    <action selector="SolveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xev-RG-c2c"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAS-l6-KLD">
                                 <rect key="frame" x="350.5" y="557" width="67" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Hint"/>
+                                <connections>
+                                    <segue destination="syB-5a-cqr" kind="presentation" identifier="HintSegue" id="rdi-og-Vou"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzI-0V-slR">
                                 <rect key="frame" x="581" y="557" width="67" height="45"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
-                                    <action selector="solveResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mdq-cH-g0U"/>
+                                    <action selector="ResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YDu-Yh-7LS"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7M-mt-Hkz">
@@ -165,6 +168,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="19.53125" y="13.4765625"/>
+        </scene>
+        <!--Hint View Controller-->
+        <scene sceneID="ipa-KB-BLj">
+            <objects>
+                <viewController id="syB-5a-cqr" customClass="HintViewController" customModule="Pentominoes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZGJ-F3-aF5">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i8y-Ns-d3i">
+                                <rect key="frame" x="119" y="220" width="531" height="600"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="56h-nH-d8B">
+                                        <rect key="frame" x="55.5" y="50" width="420" height="420"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="420" id="MLe-iq-WAJ"/>
+                                            <constraint firstAttribute="width" constant="420" id="hhH-P0-aOb"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3U-pI-mar">
+                                        <rect key="frame" x="185.5" y="505" width="160" height="65"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="Uby-9X-SWx"/>
+                                            <constraint firstAttribute="height" constant="65" id="e3y-ll-Yy8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <state key="normal" title="OK"/>
+                                        <connections>
+                                            <action selector="OKButton:" destination="syB-5a-cqr" eventType="touchUpInside" id="Xdp-wy-kXi"/>
+                                            <segue destination="WbL-vc-Qud" kind="unwind" unwindAction="dismissHintView:" id="pc4-H6-6Sy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Q3U-pI-mar" firstAttribute="centerX" secondItem="i8y-Ns-d3i" secondAttribute="centerX" id="B8b-EQ-SCH"/>
+                                    <constraint firstItem="56h-nH-d8B" firstAttribute="top" secondItem="i8y-Ns-d3i" secondAttribute="top" constant="50" id="L7N-qs-hpY"/>
+                                    <constraint firstAttribute="height" constant="600" id="Tfi-gw-vIH"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q3U-pI-mar" secondAttribute="bottom" constant="30" id="XHx-zt-hc1"/>
+                                    <constraint firstItem="56h-nH-d8B" firstAttribute="centerX" secondItem="i8y-Ns-d3i" secondAttribute="centerX" id="iQV-81-Q2b"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="i8y-Ns-d3i" firstAttribute="top" secondItem="ag3-qd-ann" secondAttribute="top" constant="200" id="BFz-9b-JTr"/>
+                            <constraint firstItem="ag3-qd-ann" firstAttribute="trailing" secondItem="i8y-Ns-d3i" secondAttribute="trailing" constant="118" id="Ulc-GO-qnv"/>
+                            <constraint firstItem="i8y-Ns-d3i" firstAttribute="leading" secondItem="ag3-qd-ann" secondAttribute="leading" constant="119" id="WOj-83-qf7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ag3-qd-ann"/>
+                    </view>
+                    <connections>
+                        <outlet property="HintImage" destination="56h-nH-d8B" id="rMm-FO-KB5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kGZ-bH-HSn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="WbL-vc-Qud" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="815.625" y="13.4765625"/>
         </scene>
     </scenes>
     <resources>

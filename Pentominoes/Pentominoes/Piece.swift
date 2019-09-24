@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Piece{
     //var allPiece: [String]
@@ -27,28 +28,10 @@ class Piece{
     }
     
     func setPiece(piece:String, count:Int){
-        let threeTimesThree = ["F","T","V","W","X","Z"]
-        let fourTimesTwo = ["L","N","Y"]
-        if threeTimesThree.contains(piece) {
-            self.newWidth = 90
-            self.newHeight = 90
-        }
-        if fourTimesTwo.contains(piece) {
-            self.newWidth = 60
-            self.newHeight = 120
-        }
-        if piece == "P"{
-            self.newWidth = 60
-            self.newHeight = 90
-        }
-        if piece == "U"{
-            self.newWidth = 90
-            self.newHeight = 60
-        }
-        if piece == "I"{
-            self.newWidth = 30
-            self.newHeight = 150
-        }
+        let image = UIImage(named: "Piece" + piece)
+        newHeight = Int(image!.size.height)
+        newWidth = Int(image!.size.width)
+        
         self.newX = 30 + (count%6) * 120
         self.newY = 30 + (count/6) * 180
         self.imageName = "Piece" + piece

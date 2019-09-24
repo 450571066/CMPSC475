@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1351E3B223308431007D6517 /* PentominoesLaunch.png in Resources */ = {isa = PBXBuildFile; fileRef = 1351E3B123308431007D6517 /* PentominoesLaunch.png */; };
+		138C2F0F2339DCED00FA91D0 /* HintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C2F0E2339DCED00FA91D0 /* HintViewController.swift */; };
 		13DB3D4923385EFF00A6C71D /* PointFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DB3D4823385EFF00A6C71D /* PointFilter.swift */; };
 		13F5BA9F232C13FF0071076F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F5BA9E232C13FF0071076F /* AppDelegate.swift */; };
 		13F5BAA1232C13FF0071076F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F5BAA0232C13FF0071076F /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		1351E3B123308431007D6517 /* PentominoesLaunch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PentominoesLaunch.png; sourceTree = "<group>"; };
+		138C2F0E2339DCED00FA91D0 /* HintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewController.swift; sourceTree = "<group>"; };
 		13DB3D4823385EFF00A6C71D /* PointFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointFilter.swift; sourceTree = "<group>"; };
 		13F5BA9B232C13FF0071076F /* Pentominoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pentominoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F5BA9E232C13FF0071076F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				13F5BA9E232C13FF0071076F /* AppDelegate.swift */,
 				13F5BAA0232C13FF0071076F /* ViewController.swift */,
 				13F5BAA2232C13FF0071076F /* Main.storyboard */,
+				138C2F0E2339DCED00FA91D0 /* HintViewController.swift */,
 				13F5BAA5232C14010071076F /* Assets.xcassets */,
 				1351E3B123308431007D6517 /* PentominoesLaunch.png */,
 				13F5BAA7232C14010071076F /* LaunchScreen.storyboard */,
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13F5BAC7232DDADE0071076F /* Piece.swift in Sources */,
+				138C2F0F2339DCED00FA91D0 /* HintViewController.swift in Sources */,
 				13F5BAA1232C13FF0071076F /* ViewController.swift in Sources */,
 				13F5BA9F232C13FF0071076F /* AppDelegate.swift in Sources */,
 				13DB3D4923385EFF00A6C71D /* PointFilter.swift in Sources */,

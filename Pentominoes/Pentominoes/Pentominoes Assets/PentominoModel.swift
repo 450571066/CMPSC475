@@ -22,7 +22,7 @@ struct Position : Codable {
 typealias Solution = [String:Position]
 typealias Solutions = [Solution]
 
-class Model {
+class PieceModel {
     let allPiece = ["X","V","N","T","U","Y","L","I","F","P","W","Z"]
 
     let allSolutions : Solutions //[[String:[String:Int]]]

@@ -8,41 +8,15 @@
 
 import UIKit
 
-let newPiece = Piece()
-let model = Model()
-var pieceList : [pentominoView] = []
-var piecePosition : [Piece] = []
-var currentBoard: Int = 0
 
-
-
-extension UIImage {
-    func rotate(_ radians: CGFloat) -> UIImage {
-        let cgImage = self.cgImage!
-        let LARGEST_SIZE = CGFloat(max(self.size.width, self.size.height))
-        let context = CGContext.init(data: nil, width:Int(LARGEST_SIZE), height:Int(LARGEST_SIZE), bitsPerComponent: cgImage.bitsPerComponent, bytesPerRow: 0, space: cgImage.colorSpace!, bitmapInfo: cgImage.bitmapInfo.rawValue)!
-        
-        var drawRect = CGRect.zero
-        drawRect.size = self.size
-        let drawOrigin = CGPoint(x: (LARGEST_SIZE - self.size.width) * 0.5,y: (LARGEST_SIZE - self.size.height) * 0.5)
-        drawRect.origin = drawOrigin
-        var tf = CGAffineTransform.identity
-        tf = tf.translatedBy(x: LARGEST_SIZE * 0.5, y: LARGEST_SIZE * 0.5)
-        tf = tf.rotated(by: CGFloat(radians))
-        tf = tf.translatedBy(x: LARGEST_SIZE * -0.5, y: LARGEST_SIZE * -0.5)
-        context.concatenate(tf)
-        context.draw(cgImage, in: drawRect)
-        var rotatedImage = context.makeImage()!
-        
-        drawRect = drawRect.applying(tf)
-        
-        rotatedImage = rotatedImage.cropping(to: drawRect)!
-        let resultImage = UIImage(cgImage: rotatedImage)
-        return resultImage
-    }
-}
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
+    
+    let newPiece = Piece()
+    let model = PieceModel()
+    var pieceList : [pentominoView] = []
+    var piecePosition : [Piece] = []
+    var currentBoard: Int = 0
     
     let kMoveScaleFactor : CGFloat = 1.2
 
@@ -60,21 +34,21 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         var count = 0
-        
         for i in model.allPiece{
             let newPiece = Piece()
             newPiece.setPiece(piece: i, count: count)
             let newPieceView = pentominoView(piece : i)
             newPieceView.frame = CGRect(x: newPiece.newX, y: newPiece.newY, width: newPiece.newWidth, height: newPiece.newHeight)
             
+            //Gesture
             newPieceView.isUserInteractionEnabled = true
-            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.movePiece(_:)))
+            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.MovePiece(_:)))
             newPieceView.addGestureRecognizer(panGesture)
             
-            let rotateGesture = UITapGestureRecognizer(target: self, action: #selector(rotatePiece(_:)))
+            let rotateGesture = UITapGestureRecognizer(target: self, action: #selector(RotatePiece(_:)))
             newPieceView.addGestureRecognizer(rotateGesture)
             
-             let flipGesture = UITapGestureRecognizer(target: self, action: #selector(flipPiece(_:)))
+             let flipGesture = UITapGestureRecognizer(target: self, action: #selector(FlipPiece(_:)))
             flipGesture.numberOfTapsRequired = 2
             newPieceView.addGestureRecognizer(flipGesture)
             rotateGesture.require(toFail: flipGesture)
@@ -85,16 +59,16 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             count = count + 1
         
         }
-        
         resetButton.isEnabled = false
-        resetButton.setTitleColor(#colorLiteral(red: 0.4862745098, green: 0.4862745098, blue: 0.4862745098, alpha: 1), for: .normal)
         solveButton.isEnabled = false
-        solveButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
         
-        
+        solveButton.setTitleColor(#colorLiteral(red: 0, green: 0.4797514677, blue: 0.9984372258, alpha: 1), for: .normal)
+        resetButton.setTitleColor(#colorLiteral(red: 0, green: 0.4797514677, blue: 0.9984372258, alpha: 1), for: .normal)
+        resetButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .disabled)
+        solveButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .disabled)
     }
     
-    @objc func rotatePiece(_ sender: UITapGestureRecognizer){
+    @objc func RotatePiece(_ sender: UITapGestureRecognizer){
         let piece = sender.view as! pentominoView
         if piece.superview != waitingBoard{
             piece.RotatePlus()
@@ -106,7 +80,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    @objc func flipPiece(_ sender: UITapGestureRecognizer){
+    @objc func FlipPiece(_ sender: UITapGestureRecognizer){
         let piece = sender.view as! pentominoView
         if piece.superview != waitingBoard{
             piece.flipNow()
@@ -119,7 +93,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
-    @objc func movePiece(_ sender: UIGestureRecognizer) {
+    @objc func MovePiece(_ sender: UIGestureRecognizer) {
         let piece = sender.view as! pentominoView
         let superview = piece.superview
         let height = piece.frame.height
@@ -127,24 +101,27 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         totalView.bringSubviewToFront(waitingBoard)
         switch sender.state {
         case .began:
-            piece.transform.scaledBy(x: kMoveScaleFactor, y: kMoveScaleFactor)
+            piece.transform = piece.transform.scaledBy(x: kMoveScaleFactor, y: kMoveScaleFactor)
             self.view.bringSubviewToFront(piece)
         case .changed:
             let location = sender.location(in: superview)
             piece.center = location
         case .ended:
-            piece.transform.scaledBy(x: 1, y: 1)
+            piece.transform = piece.transform.scaledBy(x: (1/kMoveScaleFactor), y: (1/kMoveScaleFactor))
             var final = sender.location(in: self.MainView)
             final = pointFilter(current: final, height: height, width: width)
             if (mainBoard.frame.contains(final)){
                 
-                self.moveView(piece, toSuperview: MainView!)
+                self.MoveView(piece, toSuperview: MainView!)
                 MainView.bringSubviewToFront(piece)
-                piece.center = final
+                UIView.animate(withDuration: 0.3,animations: { () -> Void in
+                    piece.center = final
+                }, completion: {_ in})
+                
                 
             }
             else{
-                self.moveView(piece, toSuperview: waitingBoard!)
+                self.MoveView(piece, toSuperview: waitingBoard!)
                 waitingBoard.bringSubviewToFront(piece)
                 var newPiecePosition : Piece = piecePosition[0]
                 for i in piecePosition{
@@ -157,44 +134,86 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 UIView.animate(withDuration: 1,animations: { () -> Void in
                     piece.center = originalPieceCenter
                 }, completion: {_ in})
-                
-                
             }
-            
         default:
             break
-            
         }
-        
     }
     
-    
-
     @IBAction func changeboard(_ sender: UIButton) {
         mainBoard.image = UIImage(named: "Board" + String(sender.tag))
         currentBoard = sender.tag
         if currentBoard == 0{
             solveButton.isEnabled = false
-            solveButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
         }
         if currentBoard != 0{
             solveButton.isEnabled = true
-            solveButton.setTitleColor(#colorLiteral(red: 0, green: 0.4797514677, blue: 0.9984372258, alpha: 1), for: .normal)
         }
     }
     
-  
-    @IBAction func solveResetButton(_ sender: UIButton) {
-    
-        
-        if currentBoard == 0{
-            return
-        }
+    @IBAction func SolveButton(_ sender: UIButton) {
         let newSolution = model.allSolutions[currentBoard - 1]
         var delay = 0
         for pieceView in pieceList{
             let rotateTimes = pieceView.getRotate()
             let flipTimes = pieceView.getFlip()
+
+            let xPosition = newSolution[pieceView.PieceName]!.x * 30
+            let yPosition = newSolution[pieceView.PieceName]!.y * 30
+            let width = Int(pieceView.frame.size.width)
+            let height = Int(pieceView.frame.size.height)
+            
+            
+            pieceView.resetFLip()
+            pieceView.resetRotate()
+           
+            
+            let superView = self.MainView
+            
+            self.MoveView(pieceView, toSuperview: superView!)
+            
+            var transformer = pieceView.transform;
+            let setRotate = newSolution[pieceView.PieceName]!.rotations
+            var realRotate: Int
+            if flipTimes{
+                realRotate = (4 - (rotateTimes%4) + setRotate) * 3
+            }
+            else{
+                realRotate = 4 - (rotateTimes%4) + setRotate
+            }
+            
+            transformer = transformer.rotated(by: (CGFloat.pi / 2) * CGFloat(realRotate))
+            
+            var newCenter = CGPoint(x: Double(xPosition) + Double(width)/2.0, y: Double(yPosition) + Double(height)/2.0)
+            if Int(realRotate)%2 == 1{
+                newCenter = CGPoint(x: Double(xPosition) + Double(height)/2.0, y: Double(yPosition) + Double(width)/2.0)
+            }
+            let realFlip = (newSolution[pieceView.PieceName]!.isFlipped != flipTimes)
+            if realFlip{
+                transformer = transformer.scaledBy(x: -1.0, y: 1.0)
+            }
+            
+            UIView.animate(withDuration: 1, delay: TimeInterval(delay)/10,animations: { () -> Void in
+                pieceView.transform = transformer
+            }, completion: {_ in})
+            UIView.animate(withDuration: 1,delay: TimeInterval(delay)/10, animations: {
+                pieceView.center = newCenter
+            })
+            delay = delay + 1
+        }
+        
+            for i in Buttons{
+                i.isEnabled = false
+            }
+            solveButton.isEnabled = false
+            resetButton.isEnabled = true
+        
+    }
+    
+    
+    @IBAction func ResetButton(_ sender: UIButton) {
+        var delay = 0
+        for pieceView in pieceList{
             var newPiecePosition : Piece = piecePosition[0]
             for i in piecePosition{
                 if i.pieceName == pieceView.PieceName{
@@ -203,87 +222,53 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 }
             }
             let originalPieceCenter = CGPoint.init(x: Double(newPiecePosition.newX) + Double(newPiecePosition.newWidth)/2.0, y: Double(newPiecePosition.newY) + Double(newPiecePosition.newHeight)/2.0)
-            let xPosition = newSolution[pieceView.PieceName]!.x * 30
-            let yPosition = newSolution[pieceView.PieceName]!.y * 30
-            let width = Int(pieceView.frame.size.width)
-            let height = Int(pieceView.frame.size.height)
-            
-            let isMovingToMainBoard = sender.tag == 0
-            if isMovingToMainBoard {
-                pieceView.resetFLip()
-                pieceView.resetRotate()
-            }
-            
-            let superView = isMovingToMainBoard ? self.MainView : self.waitingBoard
-            
-            self.moveView(pieceView, toSuperview: superView!)
         
-            var transgender = pieceView.transform;
-            let setRotate = newSolution[pieceView.PieceName]!.rotations
-            var realRotate: Int
-            if flipTimes{
-                 realRotate = (4 - (rotateTimes%4) + setRotate) * 3
-            }
-            else{
-                 realRotate = 4 - (rotateTimes%4) + setRotate
-            }
             
-            transgender = transgender.rotated(by: (CGFloat.pi / 2) * CGFloat(realRotate))
+            let superView = self.waitingBoard
+            self.MoveView(pieceView, toSuperview: superView!)
+            var transformer = pieceView.transform
+            let newCenter = originalPieceCenter
+            transformer = CGAffineTransform.identity
             
-            var newCenter = isMovingToMainBoard ? CGPoint(x: Double(xPosition) + Double(width)/2.0, y: Double(yPosition) + Double(height)/2.0) : originalPieceCenter
-            if Int(realRotate)%2 == 1{
-                newCenter = isMovingToMainBoard ? CGPoint(x: Double(xPosition) + Double(height)/2.0, y: Double(yPosition) + Double(width)/2.0) : originalPieceCenter
-            }
-            let realFlip = (newSolution[pieceView.PieceName]!.isFlipped != flipTimes)
-            if realFlip{
-                transgender = transgender.scaledBy(x: -1.0, y: 1.0)
-            }
-            
-            if !isMovingToMainBoard
-            {
-                transgender = CGAffineTransform.identity
-            }
             UIView.animate(withDuration: 1, delay: TimeInterval(delay)/10,animations: { () -> Void in
-                pieceView.transform = transgender
+                pieceView.transform = transformer
             }, completion: {_ in})
             UIView.animate(withDuration: 1,delay: TimeInterval(delay)/10, animations: {
                 pieceView.center = newCenter
             })
             delay = delay + 1
         }
-        
-        if sender.tag == 0{
-            for i in Buttons{
-                i.isEnabled = false
-            }
-            solveButton.isEnabled = false
-            solveButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
-            resetButton.isEnabled = true
-            resetButton.setTitleColor(#colorLiteral(red: 0, green: 0.4797514677, blue: 0.9984372258, alpha: 1), for: .normal)
+
+        for i in Buttons{
+            i.isEnabled = true
         }
-        else{
-            for i in Buttons{
-                i.isEnabled = true
-            }
-            resetButton.isEnabled = false
-            resetButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .normal)
-            solveButton.isEnabled = true
-            solveButton.setTitleColor(#colorLiteral(red: 0, green: 0.4797514677, blue: 0.9984372258, alpha: 1), for: .normal)
-        }
- 
-        
+        resetButton.isEnabled = false
+        solveButton.isEnabled = true
     }
-    func moveView(_ view:UIView, toSuperview superView: UIView) {
+    
+    func MoveView(_ view:UIView, toSuperview superView: UIView) {
         let newCenter = superView.convert(view.center, from: view.superview)
         superView.superview?.bringSubviewToFront(superView)
         view.center = newCenter
         superView.addSubview(view)
     }
     
+    @IBAction func dismissHintView(_ segue: UIStoryboardSegue){
+        
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier! {
+        case "HintSegue":
+            let hintViewController = segue.destination as! HintViewController
+            hintViewController.configure(with: currentBoard)
+            hintViewController.delegate = self as? HintDelegate
+        default:
+            break
+        }
+    }
     
+    func dismissHint(){
+        self.dismiss(animated: true, completion: nil)
+    }
 }
-    
-    
-
-
