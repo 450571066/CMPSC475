@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     var pieceList : [pentominoView] = []
     var piecePosition : [Piece] = []
     var currentBoard: Int = 0
+    var hintNumber: Int = 0
     
     let kMoveScaleFactor : CGFloat = 1.2
 
@@ -27,7 +28,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var waitingBoard: UIView!
     @IBOutlet var Buttons: [UIButton]!
     @IBOutlet weak var MainView: UIView!
+    @IBOutlet weak var hintButton: UIButton!
     
+    @IBAction func hintView(_ sender: UIButton) {
+        hintNumber = hintNumber + 1
+    }
     
     
     override func viewDidLoad() {
@@ -61,11 +66,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         resetButton.isEnabled = false
         solveButton.isEnabled = false
+        hintButton.isEnabled = false
         
         solveButton.setTitleColor(#colorLiteral(red: 0, green: 0.4797514677, blue: 0.9984372258, alpha: 1), for: .normal)
         resetButton.setTitleColor(#colorLiteral(red: 0, green: 0.4797514677, blue: 0.9984372258, alpha: 1), for: .normal)
+        hintButton.setTitleColor(#colorLiteral(red: 0, green: 0.4797514677, blue: 0.9984372258, alpha: 1), for: .normal)
         resetButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .disabled)
         solveButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .disabled)
+        hintButton.setTitleColor(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1), for: .disabled)
     }
     
     @objc func RotatePiece(_ sender: UITapGestureRecognizer){
@@ -141,17 +149,21 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func changeboard(_ sender: UIButton) {
+        hintNumber = 0
         mainBoard.image = UIImage(named: "Board" + String(sender.tag))
         currentBoard = sender.tag
         if currentBoard == 0{
             solveButton.isEnabled = false
+            hintButton.isEnabled = false
         }
         if currentBoard != 0{
             solveButton.isEnabled = true
+            hintButton.isEnabled = true
         }
     }
     
     @IBAction func SolveButton(_ sender: UIButton) {
+        hintButton.isEnabled = false
         let newSolution = model.allSolutions[currentBoard - 1]
         var delay = 0
         for pieceView in pieceList{
@@ -212,8 +224,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @IBAction func ResetButton(_ sender: UIButton) {
+        hintButton.isEnabled = true
+        
         var delay = 0
         for pieceView in pieceList{
+            pieceView.resetFLip()
+            pieceView.resetRotate()
             var newPiecePosition : Piece = piecePosition[0]
             for i in piecePosition{
                 if i.pieceName == pieceView.PieceName{
@@ -261,7 +277,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         switch segue.identifier! {
         case "HintSegue":
             let hintViewController = segue.destination as! HintViewController
-            hintViewController.configure(with: currentBoard)
+            hintViewController.configure(with: currentBoard, number: hintNumber)
             hintViewController.delegate = self as? HintDelegate
         default:
             break
